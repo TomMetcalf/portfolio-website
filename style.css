@@ -1,0 +1,206 @@
+* {
+    font-family: Roboto, Helvetica, sans-serif; 
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 3fr 3fr 1fr;
+    grid-template-rows: 0.2fr 7fr 7fr 3fr;
+    grid-template-areas:
+        "sidebar-left header navbar sidebar-right"
+        "sidebar-left profile-photo profile-text sidebar-right"
+        "sidebar-left current skills  sidebar-right"
+        "sidebar-left footer footer sidebar-right";
+    grid-gap: 3rem
+}
+
+.sidebar-left {
+    grid-area: sidebar-left;
+}
+
+.header {
+    grid-area: header;
+    margin: 1em;
+}
+
+h1 {
+    font-size: 2.5em;
+    margin: 0%;
+}
+
+.navbar {
+    grid-area: navbar;
+}
+
+.profile-photo {
+    grid-area: profile-photo;
+    margin: 0px 10px 10px 0px;
+    background-image: url(images/Tom%20Metcalf%20Beach%20Image.jpeg);
+    background-position: center;
+    background-size: cover;
+    border-radius: 20px;
+    box-shadow: 5px 5px 5px lightgray;
+    transition: transform .7s ease-in-out;
+}
+
+.profile-photo:hover {
+    transform: scale(0.95);
+}
+
+
+
+.profile-text {
+    grid-area: profile-text;
+}
+
+.profile-text-excerpt {
+    margin: auto;
+    font-size: 3em;
+}
+
+.current {
+    border: 1px solid black;
+    grid-area: current;
+}
+
+.skills {
+    border: 1px solid black;
+    grid-area: skills;
+}
+
+.footer {
+    border: 1px solid black;
+    grid-area: footer
+}
+
+.sidebar-right {
+    grid-area: sidebar-right
+}
+
+.navbar {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.about {
+    margin: auto 1em auto 0;
+    font-weight: 500;
+}
+
+.projects {
+    margin: auto;
+    font-weight: 500;
+}
+
+.contact {
+    display: flex;
+    justify-content: flex-end;
+    margin: auto 0 auto 1em;
+    font-weight: 500;
+}
+
+.about:hover,
+.projects:hover,
+.contact:hover {
+    color: teal;
+    transition: color 0.5s ease-out 100ms;
+}
+
+.learning-emoji {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin: 0 auto;
+    font-size: 2.7em;
+}
+
+.emoji,
+.emoji-surf,
+.emoji-art {
+    transition: transform .7s ease-in-out;
+    display: flex;
+        align-items: flex-end;
+}
+
+.emoji:hover {
+    transform: scale(1.4);
+}
+
+.emoji-surf:hover {
+    transform: scale(1.4) rotate(-20deg);
+}
+
+@media only screen and (min-width: 1200px) {
+    .profile-text-excerpt {
+        margin: 0;
+        font-size: 4em;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .profile-text-excerpt {
+        margin: 0;
+        font-size: 2.4em;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+
+    .container {
+        min-width: 400px;
+        grid-template-columns: 1fr;
+        grid-template-rows: 80px 50px 400px 400px 400px 400px 50px;
+        grid-template-areas:
+            "header"
+            "navbar"
+            "profile-text"
+            "profile-photo"
+            "skills"
+            "current"
+            "footer";
+        grid-gap: 1rem
+    }
+
+    .sidebar-left,
+    .sidebar-right {
+        display: none;
+    }
+
+    .header {
+        margin: auto;
+    }
+
+    .about,
+    .projects,
+    .contact {
+        margin: auto;
+    }
+
+    .profile-text-excerpt {
+        margin: 0px 20px;
+        font-size: 4em;
+    }
+
+    .profile-photo {
+        margin: 20px
+    }
+
+    .learning-emoji {
+        display: flex;
+        justify-content: space-around;
+    }
+
+}
+
+@media only screen and (max-width: 600px) {
+
+    .container {
+        min-width: 465px;
+    }
+
+    .profile-text-excerpt {
+        margin: 0px 20px;
+        font-size: 3.4em;
+    }
+}
