@@ -183,7 +183,7 @@ h2.my-chatty-bot-header {
     grid-template-areas:
         "footer-nav footer-social";
     grid-gap: 3rem;
-   margin-bottom: 20px;
+    margin-bottom: 20px;
 }
 
 .footer-nav {
