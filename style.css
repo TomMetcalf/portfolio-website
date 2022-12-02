@@ -62,12 +62,19 @@ a:visited {
 
 .profile-photo {
     grid-area: profile-photo;
-    background-image: url(images/tom-metcalf-beach-image.jpeg);
+    /* background-image: url(images/tom-metcalf-beach-image.jpeg);
     background-position: center;
     background-size: cover;
     border-radius: 20px;
-    box-shadow: 5px 5px 5px lightgray;
+    box-shadow: 5px 5px 5px lightgray; */
     transition: transform .5s ease-in-out;
+}
+
+.profile-photo img {
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+        box-shadow: 5px 5px 5px lightgray;
 }
 
 .profile-photo:hover {
@@ -86,10 +93,15 @@ a:visited {
 .project-image {
     display: grid;
     grid-area: project-image;
-    background-image: url(/images/my-chatty-bot-screenshot.jpeg);
+    /* background-image: url(/images/my-chatty-bot-screenshot.jpeg);
     background-position: center;
-    background-size: cover;
+    background-size: cover; */
     transition: transform .5s ease-in-out;
+}
+
+.project-image img {
+    width: 100%;
+    height: auto;
 }
 
 .project-image:hover {
@@ -99,10 +111,15 @@ a:visited {
 .project-image-2 {
     display: grid;
     grid-area: project-image-2;
-    background-image: url(/images/score-keeper.jpeg);
+    /* background-image: url(/images/score-keeper.jpeg);
     background-position: center;
-    background-size: cover;
+    background-size: cover; */
     transition: transform .5s ease-in-out;
+}
+
+.project-image-2 img {
+    width: 100%;
+    height: auto;
 }
 
 .project-image-2:hover {
@@ -395,7 +412,7 @@ button.project-link:hover {
 
     .container-home {
         grid-template-columns: 1fr;
-        grid-template-rows: 80px 50px 350px 330px 590px 450px 400px 450px 400px 450px 50px;
+        grid-template-rows: 80px 50px 350px 600px 590px 450px 700px 450px 900px 450px 50px;
         grid-template-areas:
             "header"
             "navbar"
@@ -509,4 +526,12 @@ button.project-link:hover {
         margin: 0 20px;
     }
 
+}
+
+@media only screen and (max-width: 550px) {
+
+    .container-home {
+        grid-template-columns: 1fr;
+        grid-template-rows: 80px 50px 350px 500px 590px 450px 550px 450px 750px 450px 50px;
+    }
 }
