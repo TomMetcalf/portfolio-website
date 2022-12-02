@@ -11,32 +11,139 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
     <title>My Portfolio - Tom Metcalf</title>
 </head>
 
 <body>
-    <div class="container">
+    <div class="container-home">
         <div class="sidebar-left"></div>
         <div class="header">
-            <h1>Portfolio</h1>
+            <h1><a href="/index.html">Portfolio</a></h1>
         </div>
-        <div class="navbar">
-            <div class="about">About</div>
-            <div class="projects">Projects</div>
-            <div class="contact">Contact</div>
-        </div>
+        <nav class="navbar">
+            <a class="about" href="/about.html">About</a>
+            <a class="projects" href="/index.html#project-image">Projects</a>
+            <a class="contact" href="/contact.html">Contact</a>
+        </nav>
         <div class="profile-photo"></div>
         <div class="profile-text">
             <p class="profile-text-excerpt">I love learning, creating and developing new skills.</p>
             <div class="learning-emoji">
-                <div><p class="emoji">👨‍💻</p></div>
-                <div><p class="emoji-surf">🏄‍♂️</p></div>
-                <div><p class="emoji">🎨</p></div>
+                <div>
+                    <p class="emoji">👨‍💻</p>
+                </div>
+                <div>
+                    <p class="emoji-surf">🏄‍♂️</p>
+                </div>
+                <div>
+                    <p class="emoji">🎨</p>
+                </div>
             </div>
         </div>
-        <div class="current">Currently Working On</div>
-        <div class="skills">My Skills</div>
-        <div class="footer">Footer</div>
+        <div class="current">
+            <h2 class="currently-working">Currently working on...</h2>
+            <ul>
+                <li>Building my portfolio</li>
+                <li>Codecademy Front End Web Developer Path</li>
+                <li>freeCodeCamp JavaScript Algorithms and Data Structures</li>
+                <li>The Web Developer Bootcamp 2022 - Colt Steel - Udemy</li>
+            </ul>
+        </div>
+        <div class="skills">
+            <h2 class="skills-header">Skills and Experience</h2>
+            <p class="skills-text">Through learning and building projects, I have gained experience of using the
+                following:</p>
+            <div class="icon-text">
+                <img class="icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" />
+                <strong>HTML</strong>
+            </div>
+            <div class="icon-text">
+                <img class="icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" />
+                <strong>CSS</strong>
+            </div>
+            <div class="icon-text">
+                <img class="icon"
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" />
+                <strong>Javascript</strong>
+            </div>
+            <div class="icon-text">
+                <img class="icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jquery/jquery-original.svg" />
+                <strong>jQuery</strong>
+            </div>
+            <div class="icon-text">
+                <img class="icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" />
+                <strong>Git</strong>
+            </div>
+            <div class="icon-text">
+                <img class="icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" />
+                <strong>VS Code</strong>
+            </div>
+        </div>
+        <div id="project-image" class="project-image"></div>
+        <div class="project-text">
+            <h2 class="my-chatty-bot-header">Project - My Chatty Bot</h2>
+            <p class="project-blurb"><strong>Project Aim:</strong> To build a chatbot that would initiate a conversation with the user and
+                then ask the user further questions in response. The chatbot had to display the time and date that each
+                message was posted. It also had to follow the flow of the conversation naturally, so as more messages
+                were added, the screen would scroll down. jQuery was also required to be used in this project.</p>
+            <div class="tools-used">
+                <div class="project-tools">HTML</div>
+                <div class="project-tools">CSS</div>
+                <div class="project-tools">Javascript</div>
+                <div class="project-tools">jQuery</div>
+                <div class="project-tools">VS Code</div>
+                <div class="project-tools">Github</div>
+            </div>
+            <div class="project-links">
+                <a href="https://github.com/TomMetcalf/my-chatty-bot" target="blank">
+                    <button class="project-link">GitHub</button>
+                </a>
+                <a href="https://my-chatty-bot.netlify.app/" target="_blank">
+                    <button class="project-link">Demo</button>
+                </a>
+            </div>
+        </div>
+        <div id="project-image-2" class="project-image-2"></div>
+        <div class="project-text-2">
+            <h2 class="my-chatty-bot-header">Project - Score Keeper</h2>
+            <p class="project-blurb"><strong>Project Aim:</strong> To build a score keeper. It should allow the user to the select how many points the game is played to. Players can add points using their repsective buttons. When either player reaches the winning score, the player scores will change colour (green for winner, red for loser) and the winner will be announced. The buttons to add points will also be frozen until reset has occured. The reset button will reset the game.</p>
+            <div class="tools-used">
+                <div class="project-tools">HTML</div>
+                <div class="project-tools">CSS</div>
+                <div class="project-tools">Javascript</div>
+                <div class="project-tools">Bootstrap</div>
+                <div class="project-tools">VS Code</div>
+                <div class="project-tools">Github</div>
+            </div>
+            <div class="project-links">
+                <a href="https://github.com/TomMetcalf/score-keeper" target="blank">
+                    <button class="project-link">GitHub</button>
+                </a>
+                <a href="https://table-football-score-keeper.netlify.app/" target="_blank">
+                    <button class="project-link">Demo</button>
+                </a>
+            </div>
+        </div>
+        <footer class="footer">
+            <nav class="footer-nav">
+                <h2>Navigation</h2>
+                <a class="footer-links" href="/about.html">About</a>
+                <a class="footer-links" href="/index.html#project-image">Projects</a>
+                <a class="footer-links" href="/contact.html">Contact</a>
+                <a class="footer-links" href="">Back to Top</a>
+            </nav>
+            <div class="footer-social">
+                <h2>Social Links</h2>
+                <a class="footer-links" href="https://github.com/TomMetcalf" target="_blank">Github</a>
+                <a class="footer-links" href="https://www.linkedin.com/in/tom-metcalf-a85b76257/" target="_blank">LinkedIn</a>
+                <a class="footer-links" href="https://twitter.com/TomMetDev" target="_blank">Twitter</a>
+                <a class="footer-links" href="mailto:intermet@gmail.com" target="_blank">Email</a>
+            </div>
+        </footer>
         <div class="sidebar-right"></div>
     </div>
 </body>

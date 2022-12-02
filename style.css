@@ -1,15 +1,33 @@
 * {
-    font-family: Roboto, Helvetica, sans-serif; 
+    font-family: Roboto, Helvetica, sans-serif;
+    margin: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.container-home {
+    display: grid;
+    grid-template-columns: 1fr 3fr 3fr 1fr;
+    grid-template-rows: 0.2fr 6fr 6fr 7fr 7fr 3fr;
+    grid-template-areas:
+        "sidebar-left header navbar sidebar-right"
+        "sidebar-left profile-photo profile-text sidebar-right"
+        "sidebar-left current skills  sidebar-right"
+        "sidebar-left project-image project-text sidebar-right"
+        "sidebar-left project-text-2 project-image-2 sidebar-right"
+        "sidebar-left footer footer sidebar-right";
+    grid-gap: 3rem
 }
 
 .container {
     display: grid;
     grid-template-columns: 1fr 3fr 3fr 1fr;
-    grid-template-rows: 0.2fr 7fr 7fr 3fr;
+    grid-template-rows: 0.2fr 1.8fr 1fr;
     grid-template-areas:
         "sidebar-left header navbar sidebar-right"
-        "sidebar-left profile-photo profile-text sidebar-right"
-        "sidebar-left current skills  sidebar-right"
+        "sidebar-left full-width full-width sidebar-right"
         "sidebar-left footer footer sidebar-right";
     grid-gap: 3rem
 }
@@ -20,12 +38,21 @@
 
 .header {
     grid-area: header;
-    margin: 1em;
+    margin: 1em 0;
 }
 
 h1 {
     font-size: 2.5em;
     margin: 0%;
+    text-decoration: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:visited {
+    color: black;
 }
 
 .navbar {
@@ -34,20 +61,17 @@ h1 {
 
 .profile-photo {
     grid-area: profile-photo;
-    margin: 0px 10px 10px 0px;
     background-image: url(images/Tom%20Metcalf%20Beach%20Image.jpeg);
     background-position: center;
     background-size: cover;
     border-radius: 20px;
     box-shadow: 5px 5px 5px lightgray;
-    transition: transform .7s ease-in-out;
+    transition: transform .5s ease-in-out;
 }
 
 .profile-photo:hover {
-    transform: scale(0.95);
+    transform: scale(0.98);
 }
-
-
 
 .profile-text {
     grid-area: profile-text;
@@ -58,19 +82,128 @@ h1 {
     font-size: 3em;
 }
 
+.project-image {
+    display: grid;
+    grid-area: project-image;
+    background-image: url(/images/my-chatty-bot-screenshot.png);
+    background-position: center;
+    background-size: cover;
+    transition: transform .5s ease-in-out;
+}
+
+.project-image:hover {
+    transform: scale(0.98);
+}
+
+.project-image-2 {
+    display: grid;
+    grid-area: project-image-2;
+    background-image: url(/images/score-keeper.png);
+    background-position: center;
+    background-size: cover;
+    transition: transform .5s ease-in-out;
+}
+
+.project-image-2:hover {
+    transform: scale(0.98);
+}
+
+.project-text,
+.project-text-2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+p.project-blurb {
+    margin: 0.5em 0;
+}
+
 .current {
-    border: 1px solid black;
     grid-area: current;
+    min-width: 250px;
+    font-size: 2em;
+    line-height: 1.5em;
+}
+
+h2.currently-working {
+    font-size: 1em;
+}
+
+h2.skills-header,
+h2.my-chatty-bot-header {
+    font-size: 2em;
 }
 
 .skills {
-    border: 1px solid black;
+    display: grid;
     grid-area: skills;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 0.2fr 0.4fr 2fr 2fr;
+    grid-template-areas:
+        "skills-header skills-header skills-header"
+        "skills-text skills-text skills-text"
+}
+
+.skills-header {
+    grid-area: skills-header;
+    line-height: 1.5em;
+}
+
+.skills-text {
+    grid-area: skills-text;
+    margin: none;
+}
+
+.icon {
+    display: flex;
+    padding: 2em;
+    min-width: 2.5em;
+    justify-content: center;
+    transition: transform .3s ease-in-out;
+}
+
+.icon:hover {
+    transform: scale(0.90);
+}
+
+
+.icon-text {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
 }
 
 .footer {
-    border: 1px solid black;
-    grid-area: footer
+    grid-area: footer;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+        "footer-nav footer-social";
+    grid-gap: 3rem;
+   margin-bottom: 20px;
+}
+
+.footer-nav {
+    grid-area: footer-nav;
+    display: flex;
+    flex-direction: column;
+    margin-top: 2em;
+}
+
+.footer-social {
+    grid-area: footer-social;
+    display: flex;
+    flex-direction: column;
+    margin-top: 2em;
+}
+
+.footer-nav a,
+.footer-social a {
+    margin: 1em 0;
+    text-decoration: none;
+    color: black;
 }
 
 .sidebar-right {
@@ -84,8 +217,13 @@ h1 {
 }
 
 .about {
-    margin: auto 1em auto 0;
+    margin: auto 0.5em auto 0;
     font-weight: 500;
+    text-decoration: none;
+}
+
+.full-width {
+    grid-area: full-width;
 }
 
 .projects {
@@ -96,31 +234,51 @@ h1 {
 .contact {
     display: flex;
     justify-content: flex-end;
-    margin: auto 0 auto 1em;
+    margin: auto 0 auto 0.5em;
     font-weight: 500;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    margin: 0.8em 20%;
+}
+
+.form {
+    margin: 0.5em 0em;
+}
+
+.contact-me {
+    margin: 0 20%;
+}
+
+.form-button {
+    margin: 1em 0;
+    padding: 0.5em 0;
 }
 
 .about:hover,
 .projects:hover,
-.contact:hover {
+.contact:hover,
+.footer-links:hover {
     color: teal;
-    transition: color 0.5s ease-out 100ms;
+    transition: color 0.3s ease-out 100ms;
 }
 
 .learning-emoji {
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
-    margin: 0 auto;
+    margin: 1em auto 0 auto;
     font-size: 2.7em;
 }
 
 .emoji,
 .emoji-surf,
 .emoji-art {
-    transition: transform .7s ease-in-out;
+    transition: transform .5s ease-in-out;
     display: flex;
-        align-items: flex-end;
+    align-items: flex-end;
 }
 
 .emoji:hover {
@@ -131,10 +289,74 @@ h1 {
     transform: scale(1.4) rotate(-20deg);
 }
 
+.project-links {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+button.project-link {
+    background-color: lightgray;
+    padding: 0.5em;
+    margin: 0.7em;
+    font-size: 1.2em;
+    border-radius: 10px;
+    transition: 0.3s ease-out 100ms;
+}
+
+button.project-link:hover {
+    background-color: teal;
+    color: white;
+    cursor: pointer;
+}
+
+.tools-used {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.project-tools {
+    background-color: teal;
+    color: white;
+    margin: 0.5em;
+    padding: 0.5em;
+}
+
+
+@media only screen and (min-width: 1500px) {
+
+    div.icon-text {
+        max-width: 200px;
+    }
+
+}
+
 @media only screen and (min-width: 1200px) {
     .profile-text-excerpt {
         margin: 0;
-        font-size: 4em;
+        font-size: 5em;
+    }
+
+}
+
+@media only screen and (max-width: 1200px) {
+    .profile-photo {
+        max-height: 400px;
+    }
+
+    .container-home {
+        grid-template-rows: 0.2fr 1.5fr 1.7fr 2fr 2fr 0.5fr;
+    }
+
+    .current {
+        font-size: 1.5em;
+        line-height: 1.5em;
+    }
+
+    h2.skills-header,
+    h2.my-chatty-bot-header {
+        font-size: 1.5em;
     }
 }
 
@@ -143,14 +365,36 @@ h1 {
         margin: 0;
         font-size: 2.4em;
     }
+
+    .skills,
+    .current {
+        font-size: 0.9em;
+    }
+
+    h2.skills-header {
+        font-size: 24px;
+    }
+
+    .profile-photo {
+        max-height: 300px;
+    }
+
+    .container-home {
+        grid-template-rows: 0.2fr 1.2fr 1.7fr 2fr 2fr 0.5fr;
+    }
+
+    .current {
+        font-size: 1.5em;
+        line-height: 1.5em;
+    }
+
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 650px) {
 
-    .container {
-        min-width: 400px;
+    .container-home {
         grid-template-columns: 1fr;
-        grid-template-rows: 80px 50px 400px 400px 400px 400px 50px;
+        grid-template-rows: 80px 50px 350px 330px 590px 450px 400px 450px 400px 450px 50px;
         grid-template-areas:
             "header"
             "navbar"
@@ -158,6 +402,22 @@ h1 {
             "profile-photo"
             "skills"
             "current"
+            "project-image"
+            "project-text"
+            "project-image-2"
+            "project-text-2"
+
+            "footer";
+        grid-gap: 1rem
+    }
+
+    .container {
+        grid-template-columns: 1fr;
+        grid-template-rows: 80px 50px 400px 400px;
+        grid-template-areas:
+            "header"
+            "navbar"
+            "full-width"
             "footer";
         grid-gap: 1rem
     }
@@ -177,30 +437,75 @@ h1 {
         margin: auto;
     }
 
-    .profile-text-excerpt {
-        margin: 0px 20px;
-        font-size: 4em;
-    }
-
-    .profile-photo {
-        margin: 20px
-    }
-
     .learning-emoji {
         display: flex;
         justify-content: space-around;
-    }
-
-}
-
-@media only screen and (max-width: 600px) {
-
-    .container {
-        min-width: 465px;
+        margin: 0.2em;
     }
 
     .profile-text-excerpt {
         margin: 0px 20px;
-        font-size: 3.4em;
+        font-size: 3.6em;
     }
+
+    .profile-photo {
+        margin: 0px 20px;
+    }
+
+    .skills-header,
+    .skills-text {
+        margin: 10px 20px;
+    }
+
+    .contact-form {
+        display: flex;
+        flex-direction: column;
+        margin: 0.8em 10%;
+    }
+
+    .contact-me {
+        margin: 0 10%;
+    }
+
+    .skills,
+    .current {
+        font-size: 1em;
+    }
+
+    .icon {
+        padding: 3em;
+        min-width: 2.5em;
+    }
+
+    .current,
+    .footer,
+    .full-width {
+        margin: 0px 20px;
+    }
+
+    .current {
+        font-size: 1.8em;
+        line-height: 1.5em;
+    }
+
+    .currently-working {
+        margin-bottom: 20px;
+    }
+
+    h2.skills-header,
+    h2.my-chatty-bot-header {
+        font-size: 1.8em;
+    }
+
+    h2.my-chatty-bot-header {
+        margin-top: 1em
+    }
+
+    .project-text,
+    .project-image,
+    .project-text-2,
+    .project-image-2 {
+        margin: 0 20px;
+    }
+
 }

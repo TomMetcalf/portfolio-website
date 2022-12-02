@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+    <title>Contact Me</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="sidebar-left"></div>
+        <div class="header">
+            <h1><a href="/index.html">Portfolio</a></h1>
+        </div>
+        <nav class="navbar">
+            <a class="about" href="/about.html">About</a>
+            <a class="projects" href="/index.html#project-image">Projects</a>
+            <a class="contact" href="/contact.html">Contact</a>
+        </nav>
+        <div class="full-width">
+            <h1 class="contact-me">Contact me...</h1>
+            <p class="contact-form">If you'd like to get in contact with me, please fill in the contact form below and
+                click send message.</p>
+            <form class="contact-form" action="https://formsubmit.co/intermet@gmail.com" method="POST">
+                <input type="hidden" name="_next" value="http://127.0.0.1:5500/thank-you.html">
+                <label class="form" for="">Name:</label>
+                <input type="text" name="name" placeholder="Name" required>
+                <label class="form" for="">Email:</label>
+                <input type="email" name="email" placeholder="Email Address" required>
+                <label class="form" for="">Your Message:</label>
+                <textarea placeholder="Your Message" class="form-control" name="message" rows="7" required></textarea>
+                <button class="form-button" type="submit">Send Message</button>
+            </form>
+        </div>
+        <footer class="footer">
+            <nav class="footer-nav">
+                <h2>Navigation</h2>
+                <a class="footer-links" href="/about.html">About</a>
+                <a class="footer-links" href="/index.html#project-image">Projects</a>
+                <a class="footer-links" href="/contact.html">Contact</a>
+                <a class="footer-links" href="">Back to Top</a>
+            </nav>
+            <div class="footer-social">
+                <h2>Social Links</h2>
+                <a class="footer-links" href="https://github.com/TomMetcalf" target="_blank">Github</a>
+                <a class="footer-links" href="https://www.linkedin.com/in/tom-metcalf-a85b76257/" target="_blank">LinkedIn</a>
+                <a class="footer-links" href="https://twitter.com/TomMetDev" target="_blank">Twitter</a>
+                <a class="footer-links" href="mailto:intermet@gmail.com" target="_blank">Email</a>
+            </div>
+        </footer>
+        <div class="sidebar-right"></div>
+    </div>
+
+</body>
+
+</html>
